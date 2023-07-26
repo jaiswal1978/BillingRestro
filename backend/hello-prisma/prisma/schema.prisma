@@ -9,3 +9,18 @@ datasource db {
   provider = "sqlite"
   url      = env("postgres://dlfmtssq:v4ObMAiVMXphuzrP-o3c-yocqBsP-a7B@mahmud.db.elephantsql.com/dlfmtssq?schema=prisma?")
 }
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+  posts Post[]
+}
+
+model Post {
+  id        Int     @id @default(autoincrement())
+  title     String
+  content   String?
+  published Boolean @default(false)
+  author    User    @relation(fields: [authorId], references: [id])
+  authorId  Int
+}
