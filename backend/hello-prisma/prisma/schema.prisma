@@ -7,7 +7,8 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("postgres://dlfmtssq:v4ObMAiVMXphuzrP-o3c-yocqBsP-a7B@mahmud.db.elephantsql.com/dlfmtssq?schema=prisma?")
+  // url      = env("postgres://dlfmtssq:v4ObMAiVMXphuzrP-o3c-yocqBsP-a7B@mahmud.db.elephantsql.com/dlfmtssq?schema=prisma?")
+  url      = env("postgres://dlfmtssq:v4ObMAiVMXphuzrP-o3c-yocqBsP-a7B@mahmud.db.elephantsql.com/dlfmtssq?schema=naans?")
 }
 model User {
   id    Int     @id @default(autoincrement())
